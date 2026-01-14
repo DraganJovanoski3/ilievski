@@ -131,6 +131,24 @@
         flex-direction: column;
         width: 100%;
     }
+    
+    .btn-more {
+        @include button-secondary;
+        padding: 0.75rem 1.5rem;
+        font-size: 0.9375rem;
+        border-radius: 0.5rem;
+        text-decoration: none;
+        display: inline-block;
+    }
+    
+    .btn-buy {
+        @include button-primary;
+        padding: 0.75rem 1.5rem;
+        font-size: 0.9375rem;
+        border-radius: 0.5rem;
+        text-decoration: none;
+        display: inline-block;
+    }
 }
 
 // About Preview Section

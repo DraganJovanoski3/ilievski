@@ -39,6 +39,8 @@
     transition: all $transition-base;
     @include fade-in;
     @include book-curve;
+    display: flex;
+    flex-direction: column;
     
     &:hover {
         transform: translateY(-8px);
@@ -73,6 +75,9 @@
 
 .book-info {
     padding: $spacing-md;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
 }
 
 .book-category {
@@ -155,6 +160,7 @@
     display: flex;
     gap: 0.5rem;
     flex-wrap: wrap;
+    margin-top: auto;
 }
 
 .btn-more {
