@@ -22,10 +22,18 @@
 
 .footer-wrapper {
     padding: $spacing-xxl $spacing-md;
+    
+    @include respond-to(mobile) {
+        padding: $spacing-xl $spacing-sm;
+    }
 }
 
 .footer-content {
     @include container;
+    
+    @include respond-to(mobile) {
+        padding: 0 $spacing-sm;
+    }
 }
 
 .footer-main {
@@ -60,12 +68,22 @@
 }
 
 .footer-brand {
+    @include respond-to(mobile) {
+        text-align: center;
+    }
+    
     .footer-logo {
         display: inline-block;
         margin-bottom: $spacing-md;
         filter: brightness(0) invert(1);
         opacity: 0.9;
         transition: opacity $transition-base;
+        
+        @include respond-to(mobile) {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
         
         &:hover {
             opacity: 1;
@@ -74,6 +92,10 @@
         img {
             height: 70px;
             width: auto;
+            
+            @include respond-to(mobile) {
+                height: 50px;
+            }
         }
     }
     
@@ -85,12 +107,23 @@
         line-height: 1.6;
         font-style: italic;
         font-family: $font-heading;
+        
+        @include respond-to(mobile) {
+            max-width: 100%;
+            font-size: 0.9375rem;
+            margin-bottom: $spacing-md;
+        }
     }
 }
 
 .footer-social {
     display: flex;
     gap: $spacing-md;
+    
+    @include respond-to(mobile) {
+        gap: $spacing-sm;
+        justify-content: flex-start;
+    }
     
     .social-link {
         display: flex;
@@ -105,6 +138,11 @@
         transition: all $transition-base;
         position: relative;
         overflow: hidden;
+        
+        @include respond-to(mobile) {
+            width: 44px;
+            height: 44px;
+        }
         
         &::before {
             content: '';
@@ -130,11 +168,22 @@
             }
         }
         
+        @include respond-to(mobile) {
+            &:active {
+                transform: translateY(-2px);
+            }
+        }
+        
         svg {
             width: 22px;
             height: 22px;
             position: relative;
             z-index: 1;
+            
+            @include respond-to(mobile) {
+                width: 20px;
+                height: 20px;
+            }
         }
     }
 }
@@ -148,6 +197,10 @@
 }
 
 .footer-column {
+    @include respond-to(mobile) {
+        margin-bottom: $spacing-lg;
+    }
+    
     .footer-title {
         color: $clay;
         font-size: 1.25rem;
@@ -157,6 +210,11 @@
         position: relative;
         padding-bottom: $spacing-xs;
         
+        @include respond-to(mobile) {
+            font-size: 1.125rem;
+            margin-bottom: $spacing-sm;
+        }
+        
         &::after {
             content: '';
             position: absolute;
@@ -165,6 +223,11 @@
             width: 40px;
             height: 2px;
             background: $oak;
+            
+            @include respond-to(mobile) {
+                left: 50%;
+                transform: translateX(-50%);
+            }
         }
     }
 }
@@ -177,8 +240,17 @@
     grid-template-columns: repeat(2, 1fr);
     gap: $spacing-xs $spacing-lg;
     
+    @include respond-to(mobile) {
+        grid-template-columns: repeat(2, 1fr);
+        gap: $spacing-xs 1rem;
+    }
+    
     li {
         margin-bottom: $spacing-sm;
+        
+        @include respond-to(mobile) {
+            margin-bottom: $spacing-xs;
+        }
         
         a {
             color: rgba($smoke, 0.9);
@@ -190,6 +262,13 @@
             padding: $spacing-xs 0;
             position: relative;
             font-size: 0.9375rem;
+            
+            @include respond-to(mobile) {
+                font-size: 0.875rem;
+                padding: 0.375rem 0;
+                justify-content: center;
+                text-align: center;
+            }
             
             &::before {
                 content: '';
@@ -207,6 +286,17 @@
                 
                 &::before {
                     width: 20px;
+                }
+            }
+            
+            @include respond-to(mobile) {
+                &:hover {
+                    padding-left: 0;
+                }
+                
+                &:active {
+                    color: $clay;
+                    padding-left: 0;
                 }
             }
             
@@ -230,6 +320,14 @@
     
     li {
         margin-bottom: $spacing-sm;
+        display: flex;
+        align-items: center;
+        gap: $spacing-xs;
+        
+        @include respond-to(mobile) {
+            margin-bottom: $spacing-xs;
+            justify-content: center;
+        }
         
         a {
             color: rgba($smoke, 0.9);
@@ -241,6 +339,14 @@
             padding: $spacing-xs 0;
             position: relative;
             font-size: 0.9375rem;
+            
+            @include respond-to(mobile) {
+                font-size: 0.875rem;
+                padding: 0.375rem 0;
+                word-break: break-word;
+                justify-content: center;
+                text-align: center;
+            }
             
             &::before {
                 content: '';
@@ -261,10 +367,26 @@
                 }
             }
             
+            @include respond-to(mobile) {
+                &:hover {
+                    padding-left: 0;
+                }
+                
+                &:active {
+                    color: $clay;
+                    padding-left: 0;
+                }
+            }
+            
             svg {
                 flex-shrink: 0;
                 opacity: 0.7;
                 transition: opacity $transition-base;
+                
+                @include respond-to(mobile) {
+                    width: 18px;
+                    height: 18px;
+                }
             }
             
             &:hover svg {
@@ -279,6 +401,11 @@
     background: darken($pepper, 8%);
     padding: $spacing-md 0;
     margin-top: $spacing-xl;
+    
+    @include respond-to(mobile) {
+        padding: $spacing-sm 0;
+        margin-top: $spacing-lg;
+    }
 }
 
 .footer-bottom-content {
@@ -292,7 +419,8 @@
     @include respond-to(mobile) {
         flex-direction: column;
         text-align: center;
-        gap: $spacing-sm;
+        gap: $spacing-xs;
+        padding: 0 $spacing-sm;
     }
 }
 
@@ -301,12 +429,22 @@
     font-size: 0.875rem;
     margin: 0;
     letter-spacing: 0.02em;
+    
+    @include respond-to(mobile) {
+        font-size: 0.8125rem;
+        line-height: 1.5;
+    }
 }
 
 .footer-credit {
     color: rgba($smoke, 0.8);
     font-size: 0.875rem;
     margin: 0;
+    
+    @include respond-to(mobile) {
+        font-size: 0.8125rem;
+        line-height: 1.5;
+    }
     
     .ddsolutions-link {
         color: $oak;
@@ -331,6 +469,12 @@
             
             &::after {
                 width: 100%;
+            }
+        }
+        
+        @include respond-to(mobile) {
+            &:active {
+                color: $clay;
             }
         }
     }

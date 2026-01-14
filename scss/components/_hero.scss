@@ -23,6 +23,10 @@
         min-height: 70vh;
         padding: $spacing-xl $spacing-sm;
         border-radius: 0 0 50% 50% / 0 0 20% 20%;
+        background-attachment: scroll;
+        background: 
+            linear-gradient(135deg, rgba($clay, 0.70) 0%, rgba($smoke, 0.75) 100%),
+            url('../images/bg-1.jpg') center/cover no-repeat;
     }
     
     // Book spine effect in center (like the binding of an open book)
