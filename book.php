@@ -62,6 +62,11 @@ include 'includes/header.php';
                         <?php endif; ?>
                     </p>
                 <?php endif; ?>
+                <?php if (isset($book['availability']) && !empty($book['availability'])): ?>
+                    <p class="book-availability-detail">
+                        <strong>Достапност:</strong> <?php echo htmlspecialchars($book['availability']); ?>
+                    </p>
+                <?php endif; ?>
                 <p class="book-detail-description"><?php echo htmlspecialchars($book['description']); ?></p>
                 
                 <?php if (isset($book['quote']) && !empty($book['quote'])): ?>
@@ -71,10 +76,19 @@ include 'includes/header.php';
                 <?php endif; ?>
                 
                 <div class="book-detail-actions">
-                    <a href="<?php echo htmlspecialchars($book['external_link']); ?>" 
-                       target="_blank" 
-                       rel="noopener noreferrer" 
-                       class="btn-buy">Купи Книга</a>
+                    <?php if (isset($book['purchase_links']) && !empty($book['purchase_links'])): ?>
+                        <?php foreach ($book['purchase_links'] as $link): ?>
+                            <a href="<?php echo htmlspecialchars($link['url']); ?>" 
+                               target="_blank" 
+                               rel="noopener noreferrer" 
+                               class="btn-buy">Купи на <?php echo htmlspecialchars($link['name']); ?></a>
+                        <?php endforeach; ?>
+                    <?php elseif (isset($book['external_link']) && !empty($book['external_link'])): ?>
+                        <a href="<?php echo htmlspecialchars($book['external_link']); ?>" 
+                           target="_blank" 
+                           rel="noopener noreferrer" 
+                           class="btn-buy">Купи Книга</a>
+                    <?php endif; ?>
                 </div>
             </div>
         </div>

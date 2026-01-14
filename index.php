@@ -59,13 +59,27 @@ include 'includes/header.php';
                         <span class="separator">•</span>
                         <span><?php echo htmlspecialchars($popular_book['year']); ?></span>
                     </p>
+                    <?php if (isset($popular_book['availability']) && !empty($popular_book['availability'])): ?>
+                        <p class="popular-book-availability">
+                            <strong>Достапност:</strong> <?php echo htmlspecialchars($popular_book['availability']); ?>
+                        </p>
+                    <?php endif; ?>
                     <p class="popular-book-excerpt"><?php echo htmlspecialchars(mb_substr($popular_book['description'], 0, 300, 'UTF-8')); ?>...</p>
                     <div class="popular-book-actions">
                         <a href="book.php?id=<?php echo $popular_book['id']; ?>" class="btn-more">Повеќе Детали</a>
-                        <a href="<?php echo htmlspecialchars($popular_book['external_link']); ?>" 
-                           target="_blank" 
-                           rel="noopener noreferrer" 
-                           class="btn-buy">Купи</a>
+                        <?php if (isset($popular_book['purchase_links']) && !empty($popular_book['purchase_links'])): ?>
+                            <?php foreach ($popular_book['purchase_links'] as $link): ?>
+                                <a href="<?php echo htmlspecialchars($link['url']); ?>" 
+                                   target="_blank" 
+                                   rel="noopener noreferrer" 
+                                   class="btn-buy">Купи - <?php echo htmlspecialchars($link['name']); ?></a>
+                            <?php endforeach; ?>
+                        <?php elseif (isset($popular_book['external_link']) && !empty($popular_book['external_link'])): ?>
+                            <a href="<?php echo htmlspecialchars($popular_book['external_link']); ?>" 
+                               target="_blank" 
+                               rel="noopener noreferrer" 
+                               class="btn-buy">Купи</a>
+                        <?php endif; ?>
                     </div>
                 </div>
             </div>
@@ -98,13 +112,27 @@ include 'includes/header.php';
                                 <?php endif; ?>
                                 </p>
                             <?php endif; ?>
+                            <?php if (isset($book['availability']) && !empty($book['availability'])): ?>
+                                <p class="book-availability">
+                                    <strong>Достапност:</strong> <?php echo htmlspecialchars($book['availability']); ?>
+                                </p>
+                            <?php endif; ?>
                             <p class="book-description"><?php echo htmlspecialchars($book['description']); ?></p>
                             <div class="book-actions">
                                 <a href="book.php?id=<?php echo $book['id']; ?>" class="btn-more">Повеќе Детали</a>
-                                <a href="<?php echo htmlspecialchars($book['external_link']); ?>" 
-                                   target="_blank" 
-                                   rel="noopener noreferrer" 
-                                   class="btn-buy">Купи</a>
+                                <?php if (isset($book['purchase_links']) && !empty($book['purchase_links'])): ?>
+                                    <?php foreach ($book['purchase_links'] as $link): ?>
+                                        <a href="<?php echo htmlspecialchars($link['url']); ?>" 
+                                           target="_blank" 
+                                           rel="noopener noreferrer" 
+                                           class="btn-buy">Купи - <?php echo htmlspecialchars($link['name']); ?></a>
+                                    <?php endforeach; ?>
+                                <?php elseif (isset($book['external_link']) && !empty($book['external_link'])): ?>
+                                    <a href="<?php echo htmlspecialchars($book['external_link']); ?>" 
+                                       target="_blank" 
+                                       rel="noopener noreferrer" 
+                                       class="btn-buy">Купи</a>
+                                <?php endif; ?>
                             </div>
                         </div>
                     </article>

@@ -95,6 +95,21 @@
     }
 }
 
+.popular-book-availability {
+    font-size: $font-size-md;
+    color: $sienna;
+    margin-bottom: $spacing-md;
+    padding: $spacing-sm $spacing-md;
+    background: rgba($sienna, 0.1);
+    border-radius: $radius-md;
+    border-left: 4px solid $sienna;
+    
+    strong {
+        color: $pepper;
+        font-weight: 600;
+    }
+}
+
 .popular-book-excerpt {
     color: $gum;
     font-size: $font-size-md;

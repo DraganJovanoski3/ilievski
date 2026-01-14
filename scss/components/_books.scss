@@ -92,6 +92,21 @@
     margin-bottom: $spacing-xs;
 }
 
+.book-availability {
+    font-size: 0.875rem;
+    color: $sienna;
+    margin-bottom: $spacing-xs;
+    padding: $spacing-xs $spacing-sm;
+    background: rgba($sienna, 0.1);
+    border-radius: $radius-sm;
+    border-left: 3px solid $sienna;
+    
+    strong {
+        color: $pepper;
+        font-weight: 600;
+    }
+}
+
 .book-publisher-detail {
     font-size: 1rem;
     color: $oak;
@@ -99,6 +114,21 @@
     
     strong {
         color: $pepper;
+    }
+}
+
+.book-availability-detail {
+    font-size: 1rem;
+    color: $sienna;
+    margin-bottom: $spacing-md;
+    padding: $spacing-sm $spacing-md;
+    background: rgba($sienna, 0.1);
+    border-radius: $radius-md;
+    border-left: 4px solid $sienna;
+    
+    strong {
+        color: $pepper;
+        font-weight: 600;
     }
 }
 
@@ -123,22 +153,26 @@
 
 .book-actions {
     display: flex;
-    gap: $spacing-sm;
+    gap: 0.5rem;
     flex-wrap: wrap;
 }
 
 .btn-more {
     @include button-secondary;
-    flex: 1;
-    min-width: 100px;
+    padding: 0.5rem 1rem;
+    font-size: 0.8125rem;
+    border-radius: 0.5rem;
     text-align: center;
+    white-space: nowrap;
 }
 
 .btn-buy {
     @include button-primary;
-    flex: 1;
-    min-width: 100px;
+    padding: 0.5rem 1rem;
+    font-size: 0.8125rem;
+    border-radius: 0.5rem;
     text-align: center;
+    white-space: nowrap;
 }
 
 // Single Book Page

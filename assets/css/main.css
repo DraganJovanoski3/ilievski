@@ -508,6 +508,21 @@ a:hover {
     margin: 0 0.5rem;
 }
 
+.popular-book-availability {
+    font-size: 1rem;
+    color: rgb(107, 63, 35);
+    margin-bottom: 1.5rem;
+    padding: 1rem 1.5rem;
+    background: rgba(107, 63, 35, 0.1);
+    border-radius: 1rem;
+    border-left: 4px solid rgb(107, 63, 35);
+}
+
+.popular-book-availability strong {
+    color: rgb(56, 38, 28);
+    font-weight: 600;
+}
+
 .popular-book-excerpt {
     color: rgb(143, 140, 120);
     font-size: 1rem;
@@ -954,6 +969,21 @@ a:hover {
     margin-bottom: 0.5rem;
 }
 
+.book-availability {
+    font-size: 0.875rem;
+    color: rgb(107, 63, 35);
+    margin-bottom: 0.5rem;
+    padding: 0.5rem 1rem;
+    background: rgba(107, 63, 35, 0.1);
+    border-radius: 0.5rem;
+    border-left: 3px solid rgb(107, 63, 35);
+}
+
+.book-availability strong {
+    color: rgb(56, 38, 28);
+    font-weight: 600;
+}
+
 .book-publisher-detail {
     font-size: 1rem;
     color: rgb(176, 153, 125);
@@ -962,6 +992,21 @@ a:hover {
 
 .book-publisher-detail strong {
     color: rgb(56, 38, 28);
+}
+
+.book-availability-detail {
+    font-size: 1rem;
+    color: rgb(107, 63, 35);
+    margin-bottom: 2rem;
+    padding: 1rem 1.5rem;
+    background: rgba(107, 63, 35, 0.1);
+    border-radius: 1rem;
+    border-left: 4px solid rgb(107, 63, 35);
+}
+
+.book-availability-detail strong {
+    color: rgb(56, 38, 28);
+    font-weight: 600;
 }
 
 .book-title {
@@ -985,23 +1030,22 @@ a:hover {
 
 .book-actions {
     display: flex;
-    gap: 1rem;
+    gap: 0.5rem;
     flex-wrap: wrap;
 }
 
-.btn-more {
+.book-actions .btn-more {
     background: transparent;
     color: rgb(56, 38, 28);
-    padding: 0.65rem 1.25rem;
+    padding: 0.5rem 1rem;
     border: 2px solid rgb(56, 38, 28);
-    border-radius: 0.75rem;
+    border-radius: 0.5rem;
     font-family: 'Inter', 'Lato', sans-serif;
-    font-size: 0.875rem;
+    font-size: 0.8125rem;
     font-weight: 500;
     cursor: pointer;
     transition: all 0.3s ease;
-    flex: 1;
-    min-width: 120px;
+    white-space: nowrap;
     text-align: center;
     text-decoration: none;
     display: inline-block;
@@ -1012,6 +1056,22 @@ a:hover {
     color: rgb(237, 229, 222);
     transform: translateY(-2px);
     box-shadow: 0 4px 16px rgba(56, 38, 28, 0.12);
+}
+
+.book-actions .btn-buy {
+    background: rgb(56, 38, 28);
+    color: rgb(237, 229, 222);
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 0.5rem;
+    font-family: 'Inter', 'Lato', sans-serif;
+    font-size: 0.8125rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    text-align: center;
+    text-decoration: none;
 }
 
 .btn-buy {
