@@ -1,0 +1,56 @@
+/**
+ * Header Component
+ */
+
+.header {
+    background: $clay;
+    padding: $spacing-md 0;
+    box-shadow: $shadow-sm;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+    background: rgba($clay, 0.95);
+}
+
+.header-content {
+    @include container;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: $font-heading;
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-weight: 700;
+    color: $pepper;
+    text-decoration: none;
+    letter-spacing: -0.01em;
+    display: flex;
+    align-items: center;
+    
+    &:hover {
+        color: $sienna;
+        opacity: 0.8;
+    }
+}
+
+.logo-img {
+    height: 60px;
+    width: auto;
+    transition: opacity $transition-base;
+    
+    @include respond-to(mobile) {
+        height: 50px;
+    }
+}
+
+
+
+
+
+
+
+
+

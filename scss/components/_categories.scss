@@ -1,0 +1,58 @@
+/**
+ * Categories Component
+ */
+
+.categories-section {
+    padding: $spacing-xxl $spacing-md;
+    background: linear-gradient(180deg, $clay 0%, $smoke 100%);
+    @include curved-section;
+    
+    @include respond-to(mobile) {
+        padding: $spacing-xl $spacing-sm;
+    }
+}
+
+.categories-grid {
+    @include grid(3, $spacing-md);
+    margin-top: $spacing-xl;
+}
+
+.category-card {
+    background: $clay;
+    padding: $spacing-lg;
+    border-radius: $radius-lg;
+    text-align: center;
+    box-shadow: $shadow-md;
+    transition: all $transition-base;
+    @include fade-in;
+    cursor: pointer;
+    text-decoration: none;
+    display: block;
+    
+    &:hover {
+        transform: translateY(-5px);
+        box-shadow: $shadow-lg;
+        background: $smoke;
+    }
+}
+
+.category-name {
+    font-family: $font-heading;
+    font-size: 1.75rem;
+    color: $pepper;
+    margin-bottom: $spacing-xs;
+}
+
+.category-count {
+    color: $gum;
+    font-size: 0.9375rem;
+}
+
+
+
+
+
+
+
+
+

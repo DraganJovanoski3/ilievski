@@ -1,0 +1,346 @@
+/**
+ * Footer Component - Enhanced Design
+ */
+
+.footer {
+    background: linear-gradient(180deg, $pepper 0%, darken($pepper, 5%) 100%);
+    color: $clay;
+    position: relative;
+    
+    // Curved top edge like an open book
+    &::before {
+        content: '';
+        position: absolute;
+        top: -30px;
+        left: 0;
+        right: 0;
+        height: 30px;
+        background: linear-gradient(180deg, $pepper 0%, darken($pepper, 5%) 100%);
+        border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+    }
+}
+
+.footer-wrapper {
+    padding: $spacing-xxl $spacing-md;
+}
+
+.footer-content {
+    @include container;
+}
+
+.footer-main {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr 1fr;
+    gap: $spacing-xl;
+    padding-bottom: $spacing-xl;
+    margin-bottom: $spacing-xl;
+    position: relative;
+    
+    // Decorative divider
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 200px;
+        height: 2px;
+        background: linear-gradient(90deg, transparent, $oak, transparent);
+    }
+    
+    @include respond-to(tablet) {
+        grid-template-columns: 1fr 1fr;
+        gap: $spacing-lg;
+    }
+    
+    @include respond-to(mobile) {
+        grid-template-columns: 1fr;
+        gap: $spacing-xl;
+    }
+}
+
+.footer-brand {
+    .footer-logo {
+        display: inline-block;
+        margin-bottom: $spacing-md;
+        filter: brightness(0) invert(1);
+        opacity: 0.9;
+        transition: opacity $transition-base;
+        
+        &:hover {
+            opacity: 1;
+        }
+        
+        img {
+            height: 70px;
+            width: auto;
+        }
+    }
+    
+    .footer-tagline {
+        color: $smoke;
+        font-size: 1rem;
+        margin-bottom: $spacing-lg;
+        max-width: 280px;
+        line-height: 1.6;
+        font-style: italic;
+        font-family: $font-heading;
+    }
+}
+
+.footer-social {
+    display: flex;
+    gap: $spacing-md;
+    
+    .social-link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 48px;
+        height: 48px;
+        background: rgba($clay, 0.08);
+        border: 2px solid rgba($clay, 0.15);
+        border-radius: $radius-md;
+        color: $clay;
+        transition: all $transition-base;
+        position: relative;
+        overflow: hidden;
+        
+        &::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            width: 100%;
+            height: 100%;
+            background: $sienna;
+            border-radius: inherit;
+            transition: transform $transition-base;
+            z-index: 0;
+        }
+        
+        &:hover {
+            border-color: $sienna;
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba($sienna, 0.3);
+            
+            &::before {
+                transform: translate(-50%, -50%) scale(1);
+            }
+        }
+        
+        svg {
+            width: 22px;
+            height: 22px;
+            position: relative;
+            z-index: 1;
+        }
+    }
+}
+
+.footer-links {
+    display: contents;
+    
+    @include respond-to(mobile) {
+        display: block;
+    }
+}
+
+.footer-column {
+    .footer-title {
+        color: $clay;
+        font-size: 1.25rem;
+        font-weight: 600;
+        margin-bottom: $spacing-md;
+        font-family: $font-heading;
+        position: relative;
+        padding-bottom: $spacing-xs;
+        
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background: $oak;
+        }
+    }
+}
+
+.footer-nav {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: $spacing-xs $spacing-lg;
+    
+    li {
+        margin-bottom: $spacing-sm;
+        
+        a {
+            color: rgba($smoke, 0.9);
+            text-decoration: none;
+            transition: all $transition-base;
+            display: flex;
+            align-items: center;
+            gap: $spacing-xs;
+            padding: $spacing-xs 0;
+            position: relative;
+            font-size: 0.9375rem;
+            
+            &::before {
+                content: '';
+                position: absolute;
+                left: 0;
+                width: 0;
+                height: 1px;
+                background: $oak;
+                transition: width $transition-base;
+            }
+            
+            &:hover {
+                color: $clay;
+                padding-left: $spacing-sm;
+                
+                &::before {
+                    width: 20px;
+                }
+            }
+            
+            svg {
+                flex-shrink: 0;
+                opacity: 0.7;
+                transition: opacity $transition-base;
+            }
+            
+            &:hover svg {
+                opacity: 1;
+            }
+        }
+    }
+}
+
+.footer-contact {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    
+    li {
+        margin-bottom: $spacing-sm;
+        
+        a {
+            color: rgba($smoke, 0.9);
+            text-decoration: none;
+            transition: all $transition-base;
+            display: flex;
+            align-items: center;
+            gap: $spacing-xs;
+            padding: $spacing-xs 0;
+            position: relative;
+            font-size: 0.9375rem;
+            
+            &::before {
+                content: '';
+                position: absolute;
+                left: 0;
+                width: 0;
+                height: 1px;
+                background: $oak;
+                transition: width $transition-base;
+            }
+            
+            &:hover {
+                color: $clay;
+                padding-left: $spacing-sm;
+                
+                &::before {
+                    width: 20px;
+                }
+            }
+            
+            svg {
+                flex-shrink: 0;
+                opacity: 0.7;
+                transition: opacity $transition-base;
+            }
+            
+            &:hover svg {
+                opacity: 1;
+            }
+        }
+    }
+}
+
+.footer-bottom {
+    width: 100%;
+    background: darken($pepper, 8%);
+    padding: $spacing-md 0;
+    margin-top: $spacing-xl;
+}
+
+.footer-bottom-content {
+    @include container;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: $spacing-md;
+    
+    @include respond-to(mobile) {
+        flex-direction: column;
+        text-align: center;
+        gap: $spacing-sm;
+    }
+}
+
+.footer-copyright {
+    color: rgba($smoke, 0.8);
+    font-size: 0.875rem;
+    margin: 0;
+    letter-spacing: 0.02em;
+}
+
+.footer-credit {
+    color: rgba($smoke, 0.8);
+    font-size: 0.875rem;
+    margin: 0;
+    
+    .ddsolutions-link {
+        color: $oak;
+        text-decoration: none;
+        font-weight: 600;
+        transition: all $transition-base;
+        position: relative;
+        
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: $oak;
+            transition: width $transition-base;
+        }
+        
+        &:hover {
+            color: $clay;
+            
+            &::after {
+                width: 100%;
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+

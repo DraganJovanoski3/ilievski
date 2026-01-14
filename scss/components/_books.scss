@@ -1,0 +1,232 @@
+/**
+ * Books Components
+ */
+
+.books-section {
+    padding: $spacing-xxl $spacing-md;
+    background: $clay;
+    
+    @include respond-to(mobile) {
+        padding: $spacing-xl $spacing-sm;
+    }
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: $spacing-xl;
+    
+    h2 {
+        margin-bottom: $spacing-sm;
+    }
+    
+    p {
+        color: $gum;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+}
+
+.books-grid {
+    @include grid(3, $spacing-lg);
+    margin-top: $spacing-xl;
+}
+
+.book-card {
+    background: $clay;
+    border-radius: $radius-lg;
+    overflow: hidden;
+    box-shadow: $shadow-md;
+    transition: all $transition-base;
+    @include fade-in;
+    @include book-curve;
+    
+    &:hover {
+        transform: translateY(-8px);
+        box-shadow: $shadow-lg;
+    }
+}
+
+.book-cover {
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: $smoke;
+    
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform $transition-base;
+    }
+    
+    @include respond-to(mobile) {
+        height: 300px;
+    }
+}
+
+.book-card:hover .book-cover img {
+    transform: scale(1.05);
+}
+
+.book-info {
+    padding: $spacing-md;
+}
+
+.book-category {
+    display: inline-block;
+    font-size: 0.875rem;
+    color: $sienna;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: $spacing-xs;
+    font-weight: 600;
+}
+
+.book-publisher {
+    font-size: 0.875rem;
+    color: $oak;
+    font-style: italic;
+    margin-bottom: $spacing-xs;
+}
+
+.book-publisher-detail {
+    font-size: 1rem;
+    color: $oak;
+    margin-bottom: $spacing-md;
+    
+    strong {
+        color: $pepper;
+    }
+}
+
+.book-title {
+    font-family: $font-heading;
+    font-size: 1.5rem;
+    color: $pepper;
+    margin-bottom: $spacing-sm;
+    line-height: 1.3;
+}
+
+.book-description {
+    color: $gum;
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    margin-bottom: $spacing-md;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.book-actions {
+    display: flex;
+    gap: $spacing-sm;
+    flex-wrap: wrap;
+}
+
+.btn-more {
+    @include button-secondary;
+    flex: 1;
+    min-width: 100px;
+    text-align: center;
+}
+
+.btn-buy {
+    @include button-primary;
+    flex: 1;
+    min-width: 100px;
+    text-align: center;
+}
+
+// Single Book Page
+.book-detail {
+    padding: $spacing-xxl $spacing-md;
+    background: $clay;
+    
+    @include respond-to(mobile) {
+        padding: $spacing-xl $spacing-sm;
+    }
+}
+
+.book-detail-content {
+    @include container;
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: $spacing-xl;
+    align-items: start;
+    
+    @include respond-to(tablet) {
+        grid-template-columns: 1fr;
+        gap: $spacing-lg;
+    }
+}
+
+.book-detail-cover {
+    width: 100%;
+    max-width: 500px;
+    border-radius: $radius-lg;
+    box-shadow: $shadow-lg;
+    @include book-curve;
+}
+
+.book-detail-info {
+    h1 {
+        margin-bottom: $spacing-sm;
+    }
+}
+
+.book-detail-category {
+    @extend .book-category;
+    margin-bottom: $spacing-sm;
+}
+
+.book-detail-description {
+    font-size: 1.125rem;
+    line-height: 1.8;
+    color: $pepper;
+    margin-bottom: $spacing-lg;
+}
+
+.book-quote {
+    background: $smoke;
+    padding: $spacing-lg;
+    border-radius: $radius-md;
+    border-left: 4px solid $sienna;
+    margin: $spacing-lg 0;
+    font-style: italic;
+    font-size: 1.125rem;
+    color: $pepper;
+    position: relative;
+    
+    &::before {
+        content: '"';
+        font-size: 4rem;
+        color: $oak;
+        position: absolute;
+        top: -10px;
+        left: 10px;
+        font-family: $font-heading;
+        opacity: 0.3;
+    }
+}
+
+.book-detail-actions {
+    margin-top: $spacing-lg;
+    
+    .btn-buy {
+        font-size: 1rem;
+        padding: 0.75rem 2.5rem;
+    }
+}
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,126 @@
+/**
+ * Navigation Component
+ */
+
+.nav {
+    @include respond-to(mobile) {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 280px;
+        height: 100vh;
+        background: $clay;
+        box-shadow: -4px 0 20px rgba($pepper, 0.2);
+        transition: right $transition-base;
+        z-index: 2000;
+        padding: $spacing-xl $spacing-md;
+        overflow-y: auto;
+        
+        &.active {
+            right: 0;
+        }
+    }
+}
+
+.nav-list {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: $spacing-lg;
+    
+    @include respond-to(mobile) {
+        flex-direction: column;
+        gap: $spacing-md;
+    }
+}
+
+.nav-item {
+    margin: 0;
+}
+
+.nav-link {
+    font-family: $font-body;
+    font-size: 1rem;
+    font-weight: 500;
+    color: $pepper;
+    text-decoration: none;
+    padding: $spacing-xs $spacing-sm;
+    border-radius: $radius-sm;
+    transition: all $transition-base;
+    position: relative;
+    
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 0;
+        height: 2px;
+        background: $sienna;
+        transition: width $transition-base;
+    }
+    
+    &:hover,
+    &.active {
+        color: $sienna;
+        
+        &::after {
+            width: 80%;
+        }
+    }
+    
+    @include respond-to(mobile) {
+        display: block;
+        padding: $spacing-sm;
+        font-size: 1.125rem;
+    }
+}
+
+.mobile-nav-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: $spacing-xs;
+    color: $pepper;
+    font-size: 1.5rem;
+    z-index: 2001;
+    
+    @include respond-to(mobile) {
+        display: block;
+    }
+}
+
+.mobile-nav-overlay {
+    display: none;
+    
+    @include respond-to(mobile) {
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba($pepper, 0.5);
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity $transition-base, visibility $transition-base;
+        z-index: 1999;
+        
+        &.active {
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+}
+
+
+
+
+
+
+
+
+

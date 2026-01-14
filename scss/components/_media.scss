@@ -1,0 +1,118 @@
+/**
+ * Media Page Component
+ */
+
+.media-section {
+    padding: $spacing-xxl $spacing-md;
+    background: $clay;
+    
+    @include respond-to(mobile) {
+        padding: $spacing-xl $spacing-sm;
+    }
+}
+
+.media-subsection {
+    margin-top: $spacing-xl;
+    
+    h3 {
+        font-size: clamp(1.5rem, 3vw, 2rem);
+        color: $pepper;
+        margin-bottom: $spacing-lg;
+        text-align: center;
+    }
+}
+
+.videos-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: $spacing-lg;
+    margin-bottom: $spacing-xxl;
+    
+    @include respond-to(tablet) {
+        grid-template-columns: 1fr;
+    }
+    
+    @include respond-to(mobile) {
+        grid-template-columns: 1fr;
+    }
+}
+
+.video-card {
+    background: $smoke;
+    border-radius: $radius-lg;
+    overflow: hidden;
+    box-shadow: $shadow-md;
+    transition: transform $transition-base, box-shadow $transition-base;
+    @include fade-in;
+    
+    &:hover {
+        transform: translateY(-5px);
+        box-shadow: $shadow-lg;
+    }
+}
+
+.video-wrapper {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+    height: 0;
+    overflow: hidden;
+    
+    iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: none;
+    }
+}
+
+.articles-list {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-sm;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.article-link {
+    display: flex;
+    align-items: center;
+    gap: $spacing-sm;
+    padding: $spacing-md;
+    background: $smoke;
+    border-radius: $radius-md;
+    text-decoration: none;
+    color: $pepper;
+    transition: all $transition-base;
+    box-shadow: $shadow-sm;
+    @include fade-in;
+    
+    &:hover {
+        background: $oak;
+        color: $clay;
+        transform: translateX(10px);
+        box-shadow: $shadow-md;
+    }
+}
+
+.article-icon {
+    font-size: 1.5rem;
+    flex-shrink: 0;
+}
+
+.article-title {
+    flex: 1;
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+.article-arrow {
+    font-size: 1.25rem;
+    flex-shrink: 0;
+    transition: transform $transition-base;
+    
+    .article-link:hover & {
+        transform: translateX(5px);
+    }
+}

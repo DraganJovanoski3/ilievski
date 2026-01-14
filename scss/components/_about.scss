@@ -1,0 +1,131 @@
+/**
+ * About Page Component
+ */
+
+.about-section {
+    padding: $spacing-xxl $spacing-md;
+    background: $clay;
+    
+    @include respond-to(mobile) {
+        padding: $spacing-xl $spacing-sm;
+    }
+}
+
+.about-content {
+    @include container;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: $spacing-xl;
+    align-items: start;
+    
+    @include respond-to(tablet) {
+        grid-template-columns: 1fr;
+        gap: $spacing-lg;
+    }
+}
+
+.author-portrait {
+    width: 100%;
+    max-width: 400px;
+    border-radius: $radius-lg;
+    box-shadow: $shadow-lg;
+    overflow: hidden;
+    position: relative;
+    
+    @include respond-to(tablet) {
+        justify-self: center;
+    }
+}
+
+.author-main-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    transition: transform $transition-base;
+    
+    &:hover {
+        transform: scale(1.05);
+    }
+}
+
+.author-bio {
+    h2 {
+        margin-bottom: $spacing-md;
+    }
+    
+    p {
+        font-size: 1.125rem;
+        line-height: 1.8;
+        color: $pepper;
+        margin-bottom: $spacing-md;
+        text-align: justify;
+        
+        &:first-of-type {
+            font-size: 1.25rem;
+            color: $gum;
+            font-weight: 300;
+        }
+    }
+}
+
+// Author Photo Gallery
+.author-gallery {
+    margin-top: $spacing-xxl;
+    padding-top: $spacing-xxl;
+    border-top: 2px solid rgba($pepper, 0.1);
+}
+
+.gallery-title {
+    text-align: center;
+    font-size: clamp(1.75rem, 3vw, 2.25rem);
+    color: $pepper;
+    margin-bottom: $spacing-lg;
+    font-weight: 600;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: $spacing-lg;
+    
+    @include respond-to(mobile) {
+        grid-template-columns: 1fr;
+        gap: $spacing-md;
+    }
+}
+
+.gallery-item {
+    position: relative;
+    border-radius: $radius-lg;
+    overflow: hidden;
+    box-shadow: $shadow-md;
+    transition: all $transition-base;
+    
+    &:hover {
+        transform: translateY(-8px);
+        box-shadow: $shadow-lg;
+    }
+}
+
+.gallery-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    aspect-ratio: 4/5;
+    transition: transform $transition-base;
+    
+    .gallery-item:hover & {
+        transform: scale(1.1);
+    }
+}
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,111 @@
+/**
+ * Contact Form Component
+ */
+
+.contact-section {
+    padding: $spacing-xxl $spacing-md;
+    background: linear-gradient(180deg, $smoke 0%, $clay 100%);
+    @include curved-section;
+    
+    @include respond-to(mobile) {
+        padding: $spacing-xl $spacing-sm;
+    }
+}
+
+.contact-content {
+    @include container;
+    max-width: 700px;
+}
+
+.contact-form {
+    background: $clay;
+    padding: $spacing-xl;
+    border-radius: $radius-lg;
+    box-shadow: $shadow-lg;
+    @include fade-in;
+}
+
+.form-group {
+    margin-bottom: $spacing-md;
+}
+
+.form-label {
+    display: block;
+    font-family: $font-body;
+    font-weight: 500;
+    color: $pepper;
+    margin-bottom: $spacing-xs;
+    font-size: 0.9375rem;
+}
+
+.form-input,
+.form-textarea {
+    width: 100%;
+    padding: $spacing-sm;
+    border: 2px solid $smoke;
+    border-radius: $radius-sm;
+    font-family: $font-body;
+    font-size: 1rem;
+    color: $pepper;
+    background: $clay;
+    transition: all $transition-base;
+    
+    &:focus {
+        outline: none;
+        border-color: $sienna;
+        box-shadow: 0 0 0 3px rgba($sienna, 0.1);
+    }
+    
+    &::placeholder {
+        color: $gum;
+    }
+    
+    &.error {
+        border-color: #d32f2f;
+    }
+}
+
+.form-textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+.form-error {
+    color: #d32f2f;
+    font-size: 0.875rem;
+    margin-top: $spacing-xs;
+    display: none;
+    
+    &.show {
+        display: block;
+    }
+}
+
+.form-success {
+    background: #4caf50;
+    color: white;
+    padding: $spacing-md;
+    border-radius: $radius-sm;
+    margin-bottom: $spacing-md;
+    display: none;
+    
+    &.show {
+        display: block;
+    }
+}
+
+.form-submit {
+    @include button-primary;
+    width: 100%;
+    font-size: 1.125rem;
+    padding: $spacing-sm $spacing-md;
+}
+
+
+
+
+
+
+
+
+
